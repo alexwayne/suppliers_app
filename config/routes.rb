@@ -1,8 +1,12 @@
 SuppliersApp::Application.routes.draw do
-  get "static_pages/home"
+  get "users/new"
 
-  get "static_pages/help"
-  get "static_pages/sqr"
+  root to: 'static_pages#home'
+  match '/signup', to: 'users#new'
+  match '/help', to: 'static_pages#help'
+  match '/sqr', to: 'static_pages#sqr'
+  match '/contact', to: 'static_pages#contact'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
